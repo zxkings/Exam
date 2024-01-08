@@ -1,0 +1,25 @@
+package Exam.Exercice;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+public class PostgreSQLConnector {
+	String psqlUrl = "jdbc:postgresql://pg-3ab84368-notesform.a.aivencloud.com\r\n"
+			+ ":12079/defaultdb";
+	String psqlUser = "your_postgresql_username";
+	String psqlPassword = "your_postgresql_password";
+
+	Connection psqlConn;
+	
+	public PostgreSQLConnector() throws SQLException {
+	    // ... establish connection here ...
+	    psqlConn = DriverManager.getConnection(psqlUrl, psqlUser, psqlPassword);
+	}
+	
+	
+
+}

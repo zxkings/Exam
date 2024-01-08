@@ -1,0 +1,6 @@
+package Exam.Exercice;
+
+public class Cours {
+	int id;
+	String name;
+}

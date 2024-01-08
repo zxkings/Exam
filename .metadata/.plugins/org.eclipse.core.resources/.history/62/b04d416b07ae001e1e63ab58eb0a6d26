@@ -1,0 +1,19 @@
+package Exam.Exercice;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class MySQLConnector {
+	String mysqlUrl = "jdbc:mysql://localhost:3306/your_mysql_database";
+	String mysqlUser = "your_mysql_username";
+	String mysqlPassword = "your_mysql_password";
+
+	Connection mysqlConn = DriverManager.getConnection(mysqlUrl, mysqlUser, mysqlPassword);
+	
+	public MySQLConnector() throws SQLException {
+	    // ... establish connection here ...
+	    psqlConn = DriverManager.getConnection(psqlUrl, psqlUser, psqlPassword);
+	}
+	
+}

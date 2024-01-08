@@ -1,0 +1,20 @@
+package Exam.Exercice;
+
+public class Cours {
+	
+	private int id;
+	String name;
+	
+	public Cours(int id, String name) {
+		this.setId(id);
+		this.name = name;
+	}
+
+	int getId() {
+		return id;
+	}
+
+	void setId(int id) {
+		this.id = id;
+	}
+}

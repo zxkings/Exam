@@ -1,0 +1,33 @@
+package Exam.Exercice;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
+public class PostgreSQLConnector {
+	String psqlUrl = "jdbc:postgres://avnadmin:AVNS_JrAlRj6N77T3MJeB33u@pg-3ab84368-notesform.a.aivencloud.com:12079/defaultdb?sslmode=require";
+	String psqlUser = "avnadmin";
+	String psqlPassword = "AVNS_JrAlRj6N77T3MJeB33u";
+
+	Connection psqlConn;
+	
+	public PostgreSQLConnector() throws SQLException {
+	    // ... establish connection here ...
+	    psqlConn = DriverManager.getConnection(psqlUrl, psqlUser, psqlPassword);
+	}
+	
+	public void testConnection() throws SQLException {
+        try (Statement stmt = psqlConn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT version();")) {
+            if (rs.next()) {
+                String dbVersion = rs.getString(1);
+                System.out.println("Connected to PostgreSQL database version: " + dbVersion);
+            }
+        }
+    }
+
+}
